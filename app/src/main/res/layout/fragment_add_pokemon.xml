@@ -1,0 +1,135 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="20dp"
+    tools:context=".ui.addPokemon.AddPokemonFragment">
+
+
+    <EditText
+        android:id="@+id/pokemonNameInput"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:hint="Name"
+        android:textColor="@color/white"
+        android:textSize="20sp" />
+
+    <HorizontalScrollView
+        android:layout_marginTop="10dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:fillViewport="true">
+
+
+            <RadioGroup
+                android:id="@+id/typesRadioGroup"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <RadioButton
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="16dp"
+                    android:padding="16dp"
+                    android:textSize="18sp"
+                    android:background="@drawable/normal_type_option"
+                    android:buttonTint="@color/black"
+                    android:elevation="4dp"
+                    android:text="Normal" />
+
+                <RadioButton
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="16dp"
+                    android:padding="16dp"
+                    android:textSize="18sp"
+                    android:background="@drawable/grass_type_option"
+                    android:buttonTint="@color/black"
+                    android:elevation="4dp"
+                    android:text="Grass" />
+
+                <RadioButton
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="16dp"
+                    android:padding="16dp"
+                    android:textSize="18sp"
+                    android:background="@drawable/fire_type_option"
+                    android:buttonTint="@color/black"
+                    android:elevation="4dp"
+                    android:text="Fire" />
+
+                <RadioButton
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="16dp"
+                    android:padding="16dp"
+                    android:textSize="18sp"
+                    android:background="@drawable/water_type_option"
+                    android:buttonTint="@color/black"
+                    android:elevation="4dp"
+                    android:text="Water" />
+
+                <RadioButton
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="16dp"
+                    android:padding="16dp"
+                    android:textSize="18sp"
+                    android:background="@drawable/poison_type_option"
+                    android:buttonTint="@color/black"
+                    android:elevation="4dp"
+                    android:text="Poison" />
+
+                <RadioButton
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="16dp"
+                    android:padding="16dp"
+                    android:textSize="18sp"
+                    android:background="@drawable/electric_type_option"
+                    android:buttonTint="@color/black"
+                    android:elevation="4dp"
+                    android:text="Electric" />
+
+            </RadioGroup>
+
+    </HorizontalScrollView>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Power"
+        android:gravity="center"
+        android:textSize="25sp"
+        android:layout_marginTop="20dp"/>
+
+    <NumberPicker
+        android:id="@+id/powerInput"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginTop="10dp"/>
+
+
+    <ImageView
+        android:id="@+id/imageInput"
+        android:layout_width="200dp"
+        android:layout_height="200dp"
+        android:layout_marginTop="20dp"
+        android:layout_gravity="center"
+        android:src="@drawable/ic_add_photo"/>
+
+    <Button
+        android:id="@+id/addButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:text="ADD"/>
+
+
+</LinearLayout>

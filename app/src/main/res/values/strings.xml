@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">Pokedex</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+
+    <string name="transition_image">image_transition</string>
+    <string name="settings_info">Idk, some settings to implement just for show</string>
+    <string name="profile_info">Profile, maybe</string>
+</resources>
