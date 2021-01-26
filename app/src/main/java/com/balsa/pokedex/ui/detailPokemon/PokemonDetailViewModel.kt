@@ -3,8 +3,8 @@ package com.balsa.pokedex.ui.detailPokemon
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import com.balsa.pokedex.db.Pokemon
-import com.balsa.pokedex.db.PokemonRepository
+import com.balsa.pokedex.model.Pokemon
+import com.balsa.pokedex.repos.PokemonRepository
 import kotlinx.coroutines.launch
 
 class PokemonDetailViewModel(private val pokemonRepository: PokemonRepository): ViewModel() {

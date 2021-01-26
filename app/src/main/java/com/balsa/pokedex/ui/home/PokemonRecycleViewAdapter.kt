@@ -7,7 +7,7 @@ import androidx.recyclerview.widget.RecyclerView
 import coil.load
 import com.balsa.pokedex.R
 import com.balsa.pokedex.databinding.PokemonItemViewBinding
-import com.balsa.pokedex.db.Pokemon
+import com.balsa.pokedex.model.Pokemon
 
 class PokemonRecycleViewAdapter(
     private val pokemons: List<Pokemon>,

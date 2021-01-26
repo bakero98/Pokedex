@@ -2,7 +2,7 @@ package com.balsa.pokedex.ui.home
 
 import androidx.databinding.Observable
 import androidx.lifecycle.ViewModel
-import com.balsa.pokedex.db.PokemonRepository
+import com.balsa.pokedex.repos.PokemonRepository
 
 class HomeFragmentViewModel(private val pokemonRepository: PokemonRepository): ViewModel(), Observable {
 

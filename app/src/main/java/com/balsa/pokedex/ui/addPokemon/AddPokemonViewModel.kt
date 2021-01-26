@@ -3,8 +3,8 @@ package com.balsa.pokedex.ui.addPokemon
 import android.graphics.Bitmap
 import androidx.databinding.Observable
 import androidx.lifecycle.*
-import com.balsa.pokedex.db.Pokemon
-import com.balsa.pokedex.db.PokemonRepository
+import com.balsa.pokedex.model.Pokemon
+import com.balsa.pokedex.repos.PokemonRepository
 import kotlinx.coroutines.launch
 
 class AddPokemonViewModel(private val pokemonRepository: PokemonRepository) : ViewModel(), Observable {
