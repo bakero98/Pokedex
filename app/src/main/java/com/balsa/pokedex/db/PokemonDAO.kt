@@ -2,6 +2,7 @@ package com.balsa.pokedex.db
 
 import androidx.lifecycle.LiveData
 import androidx.room.*
+import com.balsa.pokedex.model.Pokemon
 
 @Dao
 interface PokemonDAO {

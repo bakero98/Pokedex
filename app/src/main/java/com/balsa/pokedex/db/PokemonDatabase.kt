@@ -5,6 +5,7 @@ import androidx.room.Database
 import androidx.room.Room
 import androidx.room.RoomDatabase
 import androidx.room.TypeConverters
+import com.balsa.pokedex.model.Pokemon
 import com.balsa.pokedex.util.Converters
 
 @Database(entities = [Pokemon::class], version = 1)

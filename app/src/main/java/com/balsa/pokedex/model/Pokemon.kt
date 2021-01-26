@@ -1,4 +1,4 @@
-package com.balsa.pokedex.db
+package com.balsa.pokedex.model
 
 import android.graphics.Bitmap
 import android.os.Parcelable

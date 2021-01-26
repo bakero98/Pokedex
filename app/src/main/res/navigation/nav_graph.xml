@@ -61,7 +61,7 @@
         tools:layout="@layout/fragment_pokemon_detail" >
         <argument
             android:name="pokemon"
-            app:argType="com.balsa.pokedex.db.Pokemon" />
+            app:argType="com.balsa.pokedex.model.Pokemon" />
         <action
             android:id="@+id/action_pokemonDetailFragment_to_miHome"
             app:destination="@id/miHome"

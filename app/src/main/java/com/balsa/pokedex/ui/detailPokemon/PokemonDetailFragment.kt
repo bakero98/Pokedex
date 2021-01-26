@@ -11,17 +11,22 @@ import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.Navigation
 import androidx.navigation.fragment.navArgs
 import coil.load
+import com.balsa.pokedex.PokedexApplication
 import com.balsa.pokedex.R
 import com.balsa.pokedex.databinding.FragmentPokemonDetailBinding
-import com.balsa.pokedex.db.Pokemon
+import com.balsa.pokedex.model.Pokemon
 import com.balsa.pokedex.db.PokemonDatabase
-import com.balsa.pokedex.db.PokemonRepository
+import com.balsa.pokedex.repos.PokemonRepository
+import javax.inject.Inject
 
 
 class PokemonDetailFragment : Fragment() {
 
     private lateinit var binding: FragmentPokemonDetailBinding
     private lateinit var pokemonDetailViewModel: PokemonDetailViewModel
+
+    @Inject
+    lateinit var  pokemonDetailViewModelFactory: PokemonDetailViewModelFactory
 
     private val pokemonArgs: PokemonDetailFragmentArgs by navArgs()
 
@@ -32,17 +37,19 @@ class PokemonDetailFragment : Fragment() {
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
         binding = FragmentPokemonDetailBinding.inflate(layoutInflater)
+        injectDagger()
         setUpViewModel()
         addObservers()
 
         return binding.root
     }
 
+    private fun injectDagger() {
+        PokedexApplication.pokemonComponent.inject(this)
+    }
+
     private fun setUpViewModel() {
-        val dao = PokemonDatabase.getInstance(requireContext()).pokemonDAO
-        val repository = PokemonRepository(dao)
-        val factory = PokemonDetailViewModelFactory(repository)
-        pokemonDetailViewModel = ViewModelProvider(requireActivity(), factory).get(PokemonDetailViewModel::class.java)
+        pokemonDetailViewModel = ViewModelProvider(requireActivity(), pokemonDetailViewModelFactory).get(PokemonDetailViewModel::class.java)
     }
 
     private fun addObservers() {

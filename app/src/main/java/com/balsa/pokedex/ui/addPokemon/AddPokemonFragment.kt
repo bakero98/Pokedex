@@ -5,7 +5,6 @@ import android.content.Intent
 import android.net.Uri
 import android.os.Bundle
 import android.provider.MediaStore
-import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -14,16 +13,21 @@ import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
 import coil.load
+import com.balsa.pokedex.PokedexApplication
 import com.balsa.pokedex.R
 import com.balsa.pokedex.databinding.FragmentAddPokemonBinding
 import com.balsa.pokedex.db.PokemonDatabase
-import com.balsa.pokedex.db.PokemonRepository
+import com.balsa.pokedex.repos.PokemonRepository
+import javax.inject.Inject
 
 
 class AddPokemonFragment : Fragment() {
 
     private lateinit var binding: FragmentAddPokemonBinding
     private lateinit var addPokemonViewModel: AddPokemonViewModel
+
+    @Inject
+    lateinit var addPokemonViewModelFactory: AddPokemonViewModelFactory
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -38,10 +42,9 @@ class AddPokemonFragment : Fragment() {
 
         binding = FragmentAddPokemonBinding.inflate(layoutInflater)
 
-        val dao = PokemonDatabase.getInstance(requireContext()).pokemonDAO
-        val repository = PokemonRepository(dao)
-        val factory = AddPokemonViewModelFactory(repository)
-        addPokemonViewModel = ViewModelProvider(requireActivity(), factory).get(AddPokemonViewModel::class.java)
+        injectDagger()
+
+        addPokemonViewModel = ViewModelProvider(requireActivity(), addPokemonViewModelFactory).get(AddPokemonViewModel::class.java)
 
         binding.imageInput.setOnClickListener{
             uploadImage()
@@ -65,6 +68,10 @@ class AddPokemonFragment : Fragment() {
         setUpPowerPicker()
 
         return binding.root
+    }
+
+    private fun injectDagger() {
+        PokedexApplication.pokemonComponent.inject(this)
     }
 
 
