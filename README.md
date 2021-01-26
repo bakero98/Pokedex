@@ -3,6 +3,7 @@
 Example app that uses : 
 
 - MVVM
+- Dagger 2
 - ViewModel
 - View Binding
 - ROOM
