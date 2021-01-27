@@ -18,4 +18,7 @@ interface PokemonDAO {
 
     @Query("SELECT * FROM pokemon_data_table")
     fun getAllPokemons():LiveData<List<Pokemon>>
+
+    @Query("SELECT * FROM pokemon_data_table WHERE UPPER(pokemon_name) LIKE UPPER('%' || :query || '%')")
+    fun getPokemonsByQuery(query: String):LiveData<List<Pokemon>>
 }
