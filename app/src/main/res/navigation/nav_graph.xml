@@ -19,6 +19,9 @@
         <action
             android:id="@+id/action_miHome_to_pokemonDetailFragment"
             app:destination="@id/pokemonDetailFragment" />
+        <action
+            android:id="@+id/action_miHome_to_searchFragment"
+            app:destination="@id/miSearch" />
     </fragment>
     <fragment
         android:id="@+id/miProfile"
@@ -69,5 +72,14 @@
             app:popExitAnim="@anim/from_center_to_right"
             app:popUpTo="@id/nav_graph"
             app:popUpToInclusive="true" />
+    </fragment>
+    <fragment
+        android:id="@+id/miSearch"
+        android:name="com.balsa.pokedex.ui.searchPokemons.SearchFragment"
+        android:label="fragment_search"
+        tools:layout="@layout/fragment_search" >
+        <action
+            android:id="@+id/action_miSearch_to_pokemonDetailFragment"
+            app:destination="@id/pokemonDetailFragment" />
     </fragment>
 </navigation>
