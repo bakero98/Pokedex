@@ -8,6 +8,8 @@ Example app that uses :
 - View Binding
 - ROOM
 - Type Converters
+- ViewPager 2
+- Recycle View
 - Shared Element from Recycle View
 - Bottom Navigation View with Floating Action Button
 
