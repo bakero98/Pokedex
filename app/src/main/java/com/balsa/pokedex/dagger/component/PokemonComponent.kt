@@ -6,6 +6,7 @@ import com.balsa.pokedex.dagger.module.RoomDatabaseModule
 import com.balsa.pokedex.ui.addPokemon.AddPokemonFragment
 import com.balsa.pokedex.ui.detailPokemon.PokemonDetailFragment
 import com.balsa.pokedex.ui.home.HomeFragment
+import com.balsa.pokedex.ui.profile.ProfileFragment
 import com.balsa.pokedex.ui.searchPokemons.SearchFragment
 import dagger.Component
 import javax.inject.Singleton
@@ -17,4 +18,5 @@ interface PokemonComponent {
     fun inject(pokemonDetailFragment: PokemonDetailFragment)
     fun inject(homeFragment: HomeFragment)
     fun inject(searchFragment: SearchFragment)
+    fun inject(profileFragment: ProfileFragment)
 }
