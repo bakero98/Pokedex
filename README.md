@@ -1,4 +1,4 @@
-"# Pokedex" 
+# Pokedex
 
 Example app that uses : 
 
